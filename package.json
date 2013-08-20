@@ -5,7 +5,7 @@
   "description": "a simple service for scaling an image",
   "scripts": {
     "start": "node server",
-    "test": "./node_modules/.bin/mocha test"
+    "test": "./node_modules/.bin/mocha test --ui bdd -R spec"
   },
   "main": "./app",
   "repository": {
