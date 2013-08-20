@@ -5,13 +5,15 @@ var request = require('supertest')
 
 describe('given we have an image', function () {
 
-	describe('when trying to scale', function () {
+	describe('when trying to scale it', function () {
 
 		it('then should give us a response with the scaled image', function (done) {
 
 			request(app)
 				.post('/image/scale')
-				.expect('Content-Type','image/png')
+				.send({ height: .5, width: .5 })
+				.attach('image', 'test/fixtures/meat.jpg')
+				.expect('Content-Type','image/jpeg')
 				.expect(200)
 				.end(function (err, res) {
 					if (err) return done(err);
@@ -26,7 +28,7 @@ describe('given we have an image', function () {
 
 describe('given we do not have an image', function () {
 	
-	describe('when trying to scale', function () {
+	describe('when trying to scale it', function () {
 		
 		it('then should give us an error', function (done) {
 
