@@ -17,12 +17,16 @@ var supportedTypes = ['image/x-png', 'image/pjpeg', 'image/jpeg', 'image/png', '
 /*
  * POST /scale
  *
- * @param (number) height: the height scale we want
- * @param (number) width: the width scale we want
+ * @param (string) height: the height scale we want
+ * @param (string) width: the width scale we want
  * @param (image) image: the image we want to scale
  */
 
 router.post('/scale', function (req, res, next) {
+
+	var height = Math.abs(parseFloat(req.param('height')) || 1), width = Math.abs(parseFloat(req.param('width')) || 1);
+
+	if (!req.files.image) return res.set('content-type','text/plain').status(400).end(new Error('Need to submit an image to scale').toString());	
 	
 	//TODO do it!
 	res.status(501).end('Not Implemented!');
