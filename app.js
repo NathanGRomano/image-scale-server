@@ -18,7 +18,7 @@ var app = express();
 app.configure(function () {
 	app.set('port', process.env.PORT || 3000);
 	app.use(express.logger('dev'));
-	app.use(express.bodyParser());
+	app.use(express.bodyParser({keepExtensions:true, uploadDir: __dirname + '/tmp'}));
 	app.use(express.methodOverride());
 	app.use(app.router);
 	app.use('/image', routes.image.middleware);
