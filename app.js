@@ -24,6 +24,9 @@ app.configure(function () {
 	app.use('/image', routes.image.middleware);
 });
 
+app.configure('development', function () {
+	app.use(express.errorHandler());
+});
 
 /*
  * export this module as the app instance
