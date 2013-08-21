@@ -13,3 +13,7 @@ Provides an API to scale an image
 ##The API
 * POST /image/scale - Scales an image given the height, and width
 
+##Example
+You can select the image and enter the height and width
+> http://localhost:3000/test.html
+
