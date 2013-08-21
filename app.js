@@ -1,7 +1,8 @@
 /*
  * Dependencies 
  */
-var express = require('express');
+var express = require('express')
+  , routes = require('./routes');
 
 
 /*
