@@ -12,7 +12,7 @@ describe('given we have an image', function () {
 			request(app)
 				.post('/image/scale')
 				.send({ height: .5, width: .5 })
-				.attach('image', 'test/fixtures/meat.jpg')
+				.attach('image', __dirname + '/fixtures/meat.jpg')
 				.expect('Content-Type','image/jpeg')
 				.expect(200)
 				.end(function (err, res) {
