@@ -51,10 +51,6 @@ router.post('/scale', function (req, res, next) {
 
 });
 
-router.post('*', function (req, res, next) {
-
-});
-
 /*
  * export the router as this module
  */
