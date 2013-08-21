@@ -62,9 +62,6 @@ router.post('/scale', function (req, res, next) {
 					stdout.on('error', next);
 				});
 		});
-	
-	//TODO do it!
-//	res.status(501).end('Not Implemented!');
 
 });
 
