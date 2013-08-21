@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Test Image Scale</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  article, aside, details, figcaption, figure, footer, header,
+  hgroup, menu, nav, section { display: block; }
+</style>
+</head>
+<body>
+<h1>Fill out the form</h1>
+<form action="/image/scale" method="post">
+<label>The Image</label>
+<input type="file" name="image" value="" /><br />
+<label>Height</label>
+<input type="text" name="height" value="1.0"><span>Can be an integer or float</span><br />
+<label>Width</label>
+<input type="text" name="width" value="1.0"><span>Can be an integer or float</span><br />
+<button type="submit">Scale</button>
+</form>
+</body>
+</html>
