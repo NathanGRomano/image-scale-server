@@ -1,5 +1,5 @@
 {
-  "name": "image-scale-server",
+  "name": "image-scale-service",
   "version": "0.0.1",
   "author": "Nathan Romano <nathan.g.romano@gmail.com>",
   "description": "a simple service for scaling an image",
@@ -10,13 +10,11 @@
   "main": "./app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NathanGRomano/image-scale-server.git"
+    "url": "https://github.com/NathanGRomano/image-scale-service.git"
   },
   "keywords": [
-    "spell",
-    "check",
-    "suggestions",
-    "server"
+		"image",
+		"scale"
   ],
   "dependencies": {
     "express": "3.3.5",
