@@ -1,7 +1,6 @@
 var request = require('supertest')
   , assert = require('assert')
 	, app = require('../.');
-// ['image/x-png', 'image/pjpeg', 'image/jpeg', 'image/png', 'image/gif']
 
 describe('given we have a valid image', function () {
 
