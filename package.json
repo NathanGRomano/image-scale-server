@@ -14,19 +14,20 @@
   },
   "keywords": [
     "spell",
-		"check",
-		"suggestions",
+    "check",
+    "suggestions",
     "server"
   ],
-  "dependencies" : {
-		"express":"3.3.5"
+  "dependencies": {
+    "express": "3.3.5",
+    "gm": "~1.11.1"
   },
   "analyze": false,
   "devDependencies": {
-		"mocha":"1.12.0",
-		"supertest":"0.7.1"
+    "mocha": "1.12.0",
+    "supertest": "0.7.1"
   },
-  "bundledDependencies": [ ],  
+  "bundledDependencies": [],
   "license": "MIT",
   "engines": {
     "node": ">=0.6"
