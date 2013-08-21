@@ -28,8 +28,6 @@ router.post('/scale', function (req, res, next) {
 	var height = Math.abs(parseFloat(req.param('height')) || 1)
 		, width = Math.abs(parseFloat(req.param('width')) || 1)
 
-	console.log('HERE ARE THE FILES', req.files);
-
 	if (!req.files || !req.files.image) 
 		return res	
 			.set('content-type','text/plain')

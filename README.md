@@ -16,4 +16,5 @@ Provides an API to scale an image
 ##Example
 You can select the image and enter the height and width
 > http://localhost:3000/test.html
+The height and width fields will accept decimals (percentages) so to scale the image by 50% enter .5 for both height and width
 
