@@ -4,6 +4,7 @@
 
 var express = require('express')
   , router = new express.Router()
+	, fs = require('fs')
 	, gm = require('gm');
 
 
@@ -45,9 +46,25 @@ router.post('/scale', function (req, res, next) {
 			.set('content-type', 'text/plain')
 			.status(413)
 			.end(new Error('The image size is to large, must be less than 10mb').toString());
+
+	gm(image.path)
+		.size(function (err, size) {
+			if (err)
+				return res
+					.set('content-type', 'text/plain')
+					.status(500)
+					.end(err.toString());
+			res.set('Content-Type', image.type);
+			this	
+				.resize(size.width * width, size.height * height)
+				.stream(function (err, stdout, stderr) {
+					stdout.pipe(res);
+					stdout.on('error', next);
+				});
+		});
 	
 	//TODO do it!
-	res.status(501).end('Not Implemented!');
+//	res.status(501).end('Not Implemented!');
 
 });
 
