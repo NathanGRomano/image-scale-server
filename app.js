@@ -22,6 +22,7 @@ app.configure(function () {
 	app.use(express.methodOverride());
 	app.use(app.router);
 	app.use('/image', routes.image.middleware);
+	app.use(express.static(__dirname + '/public'));
 });
 
 app.configure('development', function () {
