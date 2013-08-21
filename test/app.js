@@ -11,8 +11,9 @@ describe('given we have an image', function () {
 
 			request(app)
 				.post('/image/scale')
-				.send({ height: .5, width: .5 })
-				.attach('image', __dirname + '/fixtures/meat.jpg')
+				.field('height','.5')
+				.field('width','.5')
+				.attach('image',__dirname+'/fixtures/meat.jpg')
 				.expect('Content-Type','image/jpeg')
 				.expect(200)
 				.end(function (err, res) {
@@ -34,6 +35,8 @@ describe('given we do not have an image', function () {
 
 			request(app)
 				.post('/image/scale')
+				.field('height','.5')
+				.field('width','.5')
 				.expect('Content-Type','text/plain')
 				.expect(400)
 				.end(function (err, res) {
