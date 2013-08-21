@@ -38,7 +38,7 @@ describe('given we have an invalid image', function () {
 				.field('height','.5')
 				.field('width','.5')
 				.attach('image',__dirname+'/fixtures/duck.bmp')
-				.expect('Content-Type','image/bmp')
+				.expect('Content-Type','text/plain')
 				.expect(400)
 				.end(function (err, res) {
 					if (err) return done(err);
