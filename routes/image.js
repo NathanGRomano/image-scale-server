@@ -27,13 +27,16 @@ router.post('/scale', function (req, res, next) {
 
 	var height = Math.abs(parseFloat(req.param('height')) || 1)
 		, width = Math.abs(parseFloat(req.param('width')) || 1)
-		, image = req.files.image;
 
-	if (!image) 
+	console.log('HERE ARE THE FILES', req.files);
+
+	if (!req.files || !req.files.image) 
 		return res	
 			.set('content-type','text/plain')
 			.status(400)
 			.end(new Error('Need to submit an image to scale').toString());	
+
+	var image = req.files.image;
 
 	if (supportedTypes.indexOf(image.type) < 0) 
 		return res
