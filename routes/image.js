@@ -37,8 +37,14 @@ router.post('/scale', function (req, res, next) {
 	if (supportedTypes.indexOf(image.type) < 0) 
 		return res
 			.set('content-type', 'text/plain')
-			.status(400)
+			.status(415)
 			.end(new Error('The image type is unsupported').toString());
+
+	if (image.size > 10000000)
+		return res
+			.set('content-type', 'text/plain')
+			.status(413)
+			.end(new Error('The image size is to large, must be less than 10mb').toString());
 	
 	//TODO do it!
 	res.status(501).end('Not Implemented!');
