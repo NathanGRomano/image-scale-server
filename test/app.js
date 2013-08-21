@@ -3,7 +3,7 @@ var request = require('supertest')
 	, app = require('../.');
 // ['image/x-png', 'image/pjpeg', 'image/jpeg', 'image/png', 'image/gif']
 
-describe('given we have an image', function () {
+describe('given we have a valid image', function () {
 
 	describe('when trying to scale it', function () {
 
@@ -16,6 +16,30 @@ describe('given we have an image', function () {
 				.attach('image',__dirname+'/fixtures/meat.jpg')
 				.expect('Content-Type','image/jpeg')
 				.expect(200)
+				.end(function (err, res) {
+					if (err) return done(err);
+					done();
+				});
+
+		});
+
+	});
+
+});
+
+describe('given we have an invalid image', function () {
+
+	describe('when trying to scale it', function () {
+
+		it('then should give us an error in response', function (done) {
+
+			request(app)
+				.post('/image/scale')
+				.field('height','.5')
+				.field('width','.5')
+				.attach('image',__dirname+'/fixtures/duck.bmp')
+				.expect('Content-Type','image/bmp')
+				.expect(400)
 				.end(function (err, res) {
 					if (err) return done(err);
 					done();
