@@ -3,7 +3,12 @@
  */
 
 var express = require('express')
-  , router = new express.Router();
+  , router = new express.Router()
+	, gm = require('gm');
+
+
+//TODO make this configurable
+var supportedTypes = ['image/x-png', 'image/pjpeg', 'image/jpeg', 'image/png', 'image/gif']
 
 /*
  * Bind routes to router
